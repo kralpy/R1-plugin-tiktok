@@ -10,67 +10,32 @@
     padding: 0;
     width: 240px;
     height: 282px;
-    overflow: hidden;
     background: #000;
     font-family: sans-serif;
-    color: #fff;
-  }
-  #app {
-    width: 240px;
-    height: 282px;
     overflow: hidden;
-    position: relative;
-    font-size: 12px;
   }
-  iframe {
-    width: 240px;
-    height: 282px;
+  #openButton {
+    width: 100%;
+    height: 100%;
+    background: #ff0050;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
+    cursor: pointer;
   }
 </style>
 </head>
 <body>
-<div id="app">
-  <iframe id="tiktokFrame" src="https://www.tiktok.com"></iframe>
-</div>
+<button id="openButton">Open TikTok</button>
 
 <script>
-  // Scroll wheel mapping
-  window.addEventListener("scrollUp", () => {
-    const iframe = document.getElementById('tiktokFrame');
-    try { iframe.contentWindow.scrollBy(0, -50); } catch(e) {}
-  });
-  window.addEventListener("scrollDown", () => {
-    const iframe = document.getElementById('tiktokFrame');
-    try { iframe.contentWindow.scrollBy(0, 50); } catch(e) {}
-  });
-
-  // Side button acts as click
-  window.addEventListener("sideClick", () => {
-    const iframe = document.getElementById('tiktokFrame');
-    try {
-      const active = iframe.contentWindow.document.activeElement;
-      if (active) active.click();
-    } catch(e) {}
-  });
-
-  // Tilt scrolling with accelerometer
-  if (window.creationSensors && window.creationSensors.accelerometer) {
-    window.creationSensors.accelerometer.start((data) => {
-      const iframe = document.getElementById('tiktokFrame');
-      try {
-        if (data.y > 0.1) iframe.contentWindow.scrollBy(0, 5);
-        if (data.y < -0.1) iframe.contentWindow.scrollBy(0, -5);
-      } catch(e) {}
-    }, { frequency: 60 });
-  }
-
-  // PC testing (optioneel)
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowUp') window.dispatchEvent(new Event('scrollUp'));
-    if (e.key === 'ArrowDown') window.dispatchEvent(new Event('scrollDown'));
-    if (e.key === 'Enter') window.dispatchEvent(new Event('sideClick'));
-  });
+document.getElementById('openButton').addEventListener('click', () => {
+  // Open TikTok in the R1 webview
+  window.location.href = "https://www.tiktok.com";
+});
 </script>
 </body>
 </html>
