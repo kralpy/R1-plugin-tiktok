@@ -1,0 +1,12 @@
+{
+  "name": "R1 TikTok Plugin",
+  "description": "Watch TikTok on R1 device with hardware support",
+  "version": "1.0",
+  "author": "Gürkan",
+  "entry": "index.html",
+  "type": "web",
+  "screen": {
+    "width": 240,
+    "height": 282
+  }
+}
