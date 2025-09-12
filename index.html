@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>R1 TikTok Plugin</title>
-<meta name="viewport" content="width=240, height=282, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 240px;
-    height: 282px;
-    background: #000;
-    font-family: sans-serif;
-    overflow: hidden;
-  }
-  #openButton {
-    width: 100%;
-    height: 100%;
-    background: #ff0050;
-    color: #fff;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>R1 TikTok Plugin</title>
+  <meta name="viewport" content="width=240, height=282, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 240px;
+      height: 282px;
+      background: #000;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+    #openButton {
+      width: 100%;
+      height: 100%;
+      background: #ff0050;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-<button id="openButton">Open TikTok</button>
+  <button id="openButton">Open TikTok</button>
 
-<script>
-document.getElementById('openButton').addEventListener('click', () => {
-  // Open TikTok mobile web with noApp parameter
-  window.location.href = "https://m.tiktok.com/?noApp=1";
-});
-</script>
+  <script>
+    document.getElementById('openButton').addEventListener('click', () => {
+      // Open TikTok in the R1 webview
+      window.location.href = "https://www.tiktok.com";
+    });
+  </script>
 </body>
 </html>
